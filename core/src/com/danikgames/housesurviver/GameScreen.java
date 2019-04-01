@@ -138,7 +138,7 @@ class GameScreen extends Stage implements Screen {
             }
         }
         act(delta);
-        physics.step(frameBetween, 10, 10);
+        physics.step(frameBetween, 5, 5);
         for(Actor a : getActors()){
             if(a instanceof Active){
                 ((Active) a).bodyByPhSync();
