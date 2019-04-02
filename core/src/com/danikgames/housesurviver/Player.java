@@ -14,7 +14,7 @@ import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.InputListener;
 
 public class Player extends Active {
-    float speed, forShowBack;
+    float speed;
     boolean sprint, W, A, S, D;
     boolean showBack, lookUp;
     float right, up;
@@ -58,7 +58,6 @@ public class Player extends Active {
         this.speed = speed;
         sprint = W = A = S = D = false;
         showBack = false;
-        forShowBack = 1;
         lookUp = true;
 
         BodyDef bDef = new BodyDef();
@@ -96,15 +95,6 @@ public class Player extends Active {
 
     @Override
     public void draw(Batch batch, float parentAlpha) {
-        if(showBack) {
-            if(forShowBack > 0.5f)
-                forShowBack -= 0.02f;
-        }else{
-            if(forShowBack < 1)
-                forShowBack += 0.02f;
-        }
-        batch.setColor(1, 1, 1, forShowBack);
         super.draw(batch, parentAlpha);
-        batch.setColor(1, 1, 1, 1);
     }
 }

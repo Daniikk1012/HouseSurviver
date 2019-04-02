@@ -108,7 +108,7 @@ class GameScreen extends Stage implements Screen {
             dt-=frameBetween;
             update(frameBetween);
         }
-        Gdx.gl.glClearColor(0,0.2cd ..cdcd ..f,0,1);
+        Gdx.gl.glClearColor(0,0.2f,0,1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 
         game.batch.begin();
