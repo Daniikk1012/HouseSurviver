@@ -11,7 +11,7 @@ import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.utils.Array;
-import com.badlogic.gdx.utils.viewport.StretchViewport;
+import com.badlogic.gdx.utils.viewport.FitViewport;
 
 import java.util.Comparator;
 
@@ -50,7 +50,7 @@ class GameScreen extends Stage implements Screen {
     private ActorComparator actorComparator;
 
     GameScreen(MyGdxGame game){
-        super(new StretchViewport(16,9), game.batch);
+        super(new FitViewport(16,9), game.batch);
         this.game = game;
         frameBetween = 0.02f;
         dt = 0;
@@ -108,7 +108,7 @@ class GameScreen extends Stage implements Screen {
             dt-=frameBetween;
             update(frameBetween);
         }
-        Gdx.gl.glClearColor(0,0.86f,1,1);
+        Gdx.gl.glClearColor(0,0.2cd ..cdcd ..f,0,1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 
         game.batch.begin();
@@ -139,11 +139,6 @@ class GameScreen extends Stage implements Screen {
         }
         act(delta);
         physics.step(frameBetween, 5, 5);
-        for(Actor a : getActors()){
-            if(a instanceof Active){
-                ((Active) a).bodyByPhSync();
-            }
-        }
 
         world.x = world.x + (getWidth()/2 - player.body.x - (!player.mirrored ? 1 : -1) - player.body.width/2 - world.x) / 10;
         world.y = world.y + (getHeight()/2 - player.body.y - (player.lookUp ? 1 : -1) - player.body.height/2 - world.y) / 10;
@@ -214,7 +209,7 @@ class GameScreen extends Stage implements Screen {
 
     @Override
     public void resize(int width, int height) {
-
+        getViewport().update(width, height);
     }
 
     @Override

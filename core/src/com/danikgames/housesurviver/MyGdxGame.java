@@ -20,7 +20,6 @@ public class MyGdxGame extends Game {
 		camera = new OrthographicCamera();
 
 		camera.setToOrtho(false, 1600, 800);
-		batch.setProjectionMatrix(camera.combined);
 
 		test = new Texture(Gdx.files.internal("badlogic.jpg"));
 		gameButtonsT = new Texture(Gdx.files.internal("game_buttons.png"));
