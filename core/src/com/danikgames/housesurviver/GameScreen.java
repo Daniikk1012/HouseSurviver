@@ -67,7 +67,7 @@ class GameScreen extends Stage implements Screen {
             playerSprites[0].flip(true,false);
             houseSprites = new TextureRegion[]{new TextureRegion(game.houseT, 0, 0, 64, 128)};
             treeSprites = new TextureRegion[]{new TextureRegion(game.treeT, 0, 0, 32, 64)};
-            stoneSprites = new TextureRegion[]{new TextureRegion(game.stoneT, 0, 0, 32, 32)};
+            stoneSprites = new TextureRegion[]{new TextureRegion(game.stoneT, 0, 0, 32, 64)};
             ironOreSprites = new TextureRegion[]{new TextureRegion(game.ironOreT, 0, 0, 32, 32)};
             appleSprites = new TextureRegion[]{new TextureRegion(game.appleT, 0, 0, 32, 32)};
 
