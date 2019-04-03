@@ -80,8 +80,7 @@ public class Player extends Active {
         up = (float) (S ? (W ? 0 : ((A && !D) || (D && !A) ? 1/-Math.sqrt(2) : -1)) : (W ? ((A && !D) || (D && !A) ? 1/Math.sqrt(2) : 1) : 0));
 
         phBody.setLinearVelocity(speed * right * (sprint?2:1) * 50, speed * up * (sprint?2:1) * 50);
-
-        //bodyByPhSync();
+        
         if(body.x < 0)
             body.x = 0;
         if(body.y < 0)
@@ -91,10 +90,5 @@ public class Player extends Active {
         if(body.y > game.mainScr.world.height - body.height)
             body.y = game.mainScr.world.height - body.height;
         boundSync();
-    }
-
-    @Override
-    public void draw(Batch batch, float parentAlpha) {
-        super.draw(batch, parentAlpha);
     }
 }
